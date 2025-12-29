@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/mokepon.js" defer></script>
     <title>MOKEPON!</title>
 </head>
 <body>
@@ -10,51 +11,40 @@
 
     <section id="section-pet">
         <h2>Elige tu mascota</h2>
-<<<<<<< HEAD
 
-        <label>Hipodoge</label>
-        <input name="mascota" id="hipodoge">
+        <label for="hipodoge">Hipodoge</label>
+        <input type="radio" name="mascota" id="hipodoge">
 
-        <label>Capipepo</label>
-        <input name="mascota" id="capipepo">
+        <label for="capipepo">Capipepo</label>
+        <input type="radio" name="mascota" id="capipepo">
 
-        <label>Ratigueya</label>
-        <input name="mascota" id="ratigueya">
-=======
->>>>>>> 0ca44de (actualización en la estructura html de la sección-atque)
+        <label for="ratigueya">Ratigueya</label>
+        <input type="radio" name="mascota" id="ratigueya">
+
+        <button id="boton-mascota">Seleccionar</button>
     </section>
 
     <section id="section-attack">
     
     <h2>Elige tu ataque</h2>
 
-    <p>Tu mascota tiene <span>3</span> vidas</p>
-    <p>La mascota del enemigo tiene <span>3</span> vidas</p>
+    <p>Tu mascota <span id="mascota-jugador"></span> tiene <span>3</span> vidas</p>
+    <p>La mascota del enemigo <span id="mascota-jugador"></span>tiene <span>3</span> vidas</p>
     <p>
-        <button>Tierra</button>
-        <button>Fuego</button>
-        <button>Agua</button>
+        <button id="boton-tierra">Tierra</button>
+        <button id="boton-fuego">Fuego</button>
+        <button id="boton-agua">Agua</button>
     </p>
     </section>
 
     <section id="mensaje">
         <p>
-<<<<<<< HEAD
-
+            Tu mascota atacó con FUEGO, la mascota del enemigo ataco con TIERRA - GANASTE
         </p>
     </section>
 
     <section id="final">
-        <button>Reiniciar</button>
+        <button id="boton-reiniciar">Reiniciar</button>
     </section>
 </body>
 </html>
-=======
-            
-        </p>
-    </section>
-
-    <section></section>
-</body>
-</html>
->>>>>>> 0ca44de (actualización en la estructura html de la sección-atque)
