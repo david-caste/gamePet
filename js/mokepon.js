@@ -1,4 +1,4 @@
-
+let ataqueJugador
 
 let botonMascota = document.getElementById('boton-mascota')
 botonMascota.addEventListener('click', ()=>{
@@ -23,6 +23,25 @@ botonMascota.addEventListener('click', ()=>{
 
     //Mascota enemigo
     seleccionarMascotaEnemigo()
+})
+
+//Ataques (botones)
+let ataqueAgua = document.getElementById('boton-agua')
+ataqueAgua.addEventListener('click', ()=>{
+    ataqueJugador = 'AGUA'
+    alert(ataqueJugador)
+})
+
+let ataqueFuego = document.getElementById('boton-fuego')
+ataqueFuego.addEventListener('click', ()=>{
+    ataqueJugador = 'FUEGO'
+    alert(ataqueJugador)
+})
+
+let ataqueTierra = document.getElementById('boton-tierra')
+ataqueTierra.addEventListener('click', ()=>{
+    ataqueJugador = 'TIERRA'
+    alert(ataqueJugador)
 })
 
 function seleccionarMascotaEnemigo(){
