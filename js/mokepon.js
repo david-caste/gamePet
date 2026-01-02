@@ -20,4 +20,25 @@ botonMascota.addEventListener('click', ()=>{
     }else{
         alert("Selecciona una mascota")
     }
+
+    //Mascota enemigo
+    seleccionarMascotaEnemigo()
 })
+
+function seleccionarMascotaEnemigo(){
+    let atequeAleatorio = aleatorio(1,3)
+    let inputMascotaEnemigo = document.getElementById('mascota-enemigo')
+
+    if(atequeAleatorio == 1){
+        inputMascotaEnemigo.innerHTML = 'Hipodoge'
+    }else if(atequeAleatorio == 1){
+        inputMascotaEnemigo.innerHTML = 'Capipepo'
+    }else{
+        inputMascotaEnemigo.innerHTML = 'Ratigueya'
+    }
+}
+
+//Función Mascota del enemigo
+function aleatorio(min, max){
+    return Math.floor(Math.random * (max - min + 1) + min)
+}
