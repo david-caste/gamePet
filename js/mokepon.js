@@ -30,21 +30,18 @@ botonMascota.addEventListener('click', ()=>{
 let ataqueAgua = document.getElementById('boton-agua')
 ataqueAgua.addEventListener('click', ()=>{
     ataqueJugador = 'AGUA'
-    document.getElementById('ataque-jugador').innerHTML = ataqueJugador
     seleccionarAtaqueEnemigo()
 })
 
 let ataqueFuego = document.getElementById('boton-fuego')
 ataqueFuego.addEventListener('click', ()=>{
     ataqueJugador = 'FUEGO'
-    document.getElementById('ataque-jugador').innerHTML = ataqueJugador
     seleccionarAtaqueEnemigo()
 })
 
 let ataqueTierra = document.getElementById('boton-tierra')
 ataqueTierra.addEventListener('click', ()=>{
     ataqueJugador = 'TIERRA'
-    document.getElementById('ataque-jugador').innerHTML = ataqueJugador
     seleccionarAtaqueEnemigo()
 })
 
@@ -54,7 +51,7 @@ function seleccionarMascotaEnemigo(){
 
     if(mascotaAleatorio == 1){
         inputMascotaEnemigo.innerHTML = 'Hipodoge'
-    }else if(mascotaAleatorio == 1){
+    }else if(mascotaAleatorio == 2){
         inputMascotaEnemigo.innerHTML = 'Capipepo'
     }else{
         inputMascotaEnemigo.innerHTML = 'Ratigueya'
@@ -63,7 +60,7 @@ function seleccionarMascotaEnemigo(){
 
 //Función Mascota del enemigo
 function aleatorio(min, max){
-    return Math.floor(Math.random * (max - min + 1) + min)
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 //Función ataque enemigo
@@ -71,12 +68,22 @@ function seleccionarAtaqueEnemigo(){
     let eleccion = aleatorio(1,3)
     if(eleccion == 1){
         ataqueEnemigo = 'TIERRA'
-        document.getElementById('ataque-enemigo').innerHTML = ataqueEnemigo
+        crearMensaje()
     }else if(eleccion == 2){
         ataqueEnemigo = 'FUEGO'
-        document.getElementById('ataque-enemigo').innerHTML = ataqueEnemigo
+        crearMensaje()
     }else{
         ataqueEnemigo = 'AGUA'
-        document.getElementById('ataque-enemigo').innerHTML = ataqueEnemigo
+        crearMensaje()
     }
+}
+
+//Mensaje
+function crearMensaje(){
+    let sectionMensaje = document.getElementById('mensaje')
+
+    let txtParrafo = document.createElement('P')
+    txtParrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' la mascota del enemigo ataco con ' + ataqueEnemigo + ' -  GANASTE'
+
+    sectionMensaje.appendChild(txtParrafo)
 }
