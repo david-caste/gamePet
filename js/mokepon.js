@@ -78,6 +78,21 @@ function seleccionarAtaqueEnemigo(){
     }
 }
 
+//Combate
+function combate(){
+    if(ataqueEnemigo == ataqueJugador){
+
+    }else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
+
+    }else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA'){
+        
+    }else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO'){
+        
+    }else{
+
+    }
+}
+
 //Mensaje
 function crearMensaje(){
     let sectionMensaje = document.getElementById('mensaje')
