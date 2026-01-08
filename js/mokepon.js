@@ -68,37 +68,37 @@ function seleccionarAtaqueEnemigo(){
     let eleccion = aleatorio(1,3)
     if(eleccion == 1){
         ataqueEnemigo = 'TIERRA'
-        crearMensaje()
+        combate()
     }else if(eleccion == 2){
         ataqueEnemigo = 'FUEGO'
-        crearMensaje()
+        combate()
     }else{
         ataqueEnemigo = 'AGUA'
-        crearMensaje()
+        combate()
     }
 }
 
 //Combate
 function combate(){
     if(ataqueEnemigo == ataqueJugador){
-
+        crearMensaje('EMPATE')
     }else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
-
+        crearMensaje('GANASTE')
     }else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA'){
-        
+        crearMensaje('GANASTE')
     }else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO'){
-        
+        crearMensaje('GANASTE')
     }else{
-
+        crearMensaje('PERDISTE')
     }
 }
 
 //Mensaje
-function crearMensaje(){
+function crearMensaje(resultadoCombate){
     let sectionMensaje = document.getElementById('mensaje')
 
     let txtParrafo = document.createElement('P')
-    txtParrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' la mascota del enemigo ataco con ' + ataqueEnemigo + ' -  GANASTE'
+    txtParrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultadoCombate
 
     sectionMensaje.appendChild(txtParrafo)
 }
