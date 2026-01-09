@@ -1,5 +1,7 @@
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 let botonMascota = document.getElementById('boton-mascota')
 botonMascota.addEventListener('click', ()=>{
@@ -45,6 +47,12 @@ ataqueTierra.addEventListener('click', ()=>{
     seleccionarAtaqueEnemigo()
 })
 
+//Boton reiniciar
+let btnReiniciar = document.getElementById('boton-reiniciar')
+    btnReiniciar.addEventListener('click', ()=>{
+    location.reload()
+})
+
 function seleccionarMascotaEnemigo(){
     let mascotaAleatorio = aleatorio(1,3)
     let inputMascotaEnemigo = document.getElementById('mascota-enemigo')
@@ -80,16 +88,38 @@ function seleccionarAtaqueEnemigo(){
 
 //Combate
 function combate(){
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+
     if(ataqueEnemigo == ataqueJugador){
         crearMensaje('EMPATE')
     }else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
         crearMensaje('GANASTE')
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA'){
         crearMensaje('GANASTE')
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO'){
         crearMensaje('GANASTE')
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }else{
         crearMensaje('PERDISTE')
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+    }
+
+    revisarVidas()
+}
+
+//Revisar vidas
+function revisarVidas(){
+    if(vidasEnemigo == 0){
+        crearMensajeFinal('GANASTE A TU OPONENTE')
+    }else if(vidasJugador == 0){
+        crearMensajeFinal('PERDISTE')
     }
 }
 
@@ -101,4 +131,21 @@ function crearMensaje(resultadoCombate){
     txtParrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultadoCombate
 
     sectionMensaje.appendChild(txtParrafo)
+}
+
+function crearMensajeFinal(resultadoCombateFinal){
+    let sectionMensaje = document.getElementById('mensaje')
+
+    let txtParrafo = document.createElement('P')
+    txtParrafo.innerHTML = resultadoCombateFinal
+
+    sectionMensaje.appendChild(txtParrafo)
+
+    //Desactivar botones
+    let ataqueAgua = document.getElementById('boton-agua')
+    ataqueAgua.disabled = true
+    let ataqueFuego = document.getElementById('boton-fuego')
+    ataqueFuego.disabled = true
+    let ataqueTierra = document.getElementById('boton-tierra')
+    ataqueTierra.disabled = true
 }
