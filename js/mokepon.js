@@ -3,6 +3,14 @@ let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 
+let sectionAtaque = document.getElementById('section-attack')
+sectionAtaque.style.display = 'none'
+
+let sectionMascota = document.getElementById('section-pet')
+
+let sectionBtnReinicio = document.getElementById('final')
+sectionBtnReinicio.style.display = 'none'
+
 let botonMascota = document.getElementById('boton-mascota')
 botonMascota.addEventListener('click', ()=>{
     let inputHipodoge = document.getElementById('hipodoge')
@@ -14,12 +22,18 @@ botonMascota.addEventListener('click', ()=>{
     if(inputHipodoge.checked){
         alert("Mascota hipodoge")
         spanMascotaJugador.innerHTML = 'Hipodoge'
+        sectionAtaque.style.display = 'block'
+        sectionMascota.style.display = 'none'
     }else if(inputCapipepo.checked){
         alert("Mascota capipepo")
         spanMascotaJugador.innerHTML = 'Capipepo'
+        sectionAtaque.style.display = 'block'
+        sectionMascota.style.display = 'none'
     }else if(inputRatigueya.checked){
         alert("Mascota ratigueya")
         spanMascotaJugador.innerHTML = 'Ratigueya'
+        sectionAtaque.style.display = 'block'
+        sectionMascota.style.display = 'none'
     }else{
         alert("Selecciona una mascota")
     }
@@ -118,8 +132,10 @@ function combate(){
 function revisarVidas(){
     if(vidasEnemigo == 0){
         crearMensajeFinal('GANASTE A TU OPONENTE')
+        sectionBtnReinicio.style.display = 'block'
     }else if(vidasJugador == 0){
         crearMensajeFinal('PERDISTE')
+        sectionBtnReinicio.style.display = 'block'
     }
 }
 
