@@ -18,6 +18,7 @@ body{
 
 .subtitulo{
     font-size: 35px;
+    margin-bottom: 50px;
 }
 
 .tarjetas{
@@ -44,4 +45,14 @@ body{
 
 input{
     display: none;
+}
+
+#boton-mascota{
+    width: 150px;
+    height: 30px;
+    margin: 30px;
+    background-color: #6E5034;
+    color: #fff;
+    border-radius: 10px;
+    font-family: "Oswald", sans-serif;
 }
