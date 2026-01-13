@@ -89,3 +89,25 @@ input{
     background-color: #EFE1B5;
     font-size: 15px;
 }
+
+/*Recomendación: CSS tricks - https://css-tricks.com/css-grid-layout-guide/ , Game: https://cssgridgarden.com/#es - https://flexboxfroggy.com/#es*/
+.ataque{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    margin-top: 25px;
+    gap: 30px;
+}
+
+.jugador{
+    border: solid 2px;
+}
+
+.enemigo{
+    border: solid 2px;
+}
+
+@media(max-width: 600px){
+    .tarjetas, .tarjetas-ataques{
+        flex-direction: column;
+    }
+}
