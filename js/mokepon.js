@@ -140,22 +140,26 @@ function revisarVidas(){
 }
 
 //Mensaje
-function crearMensaje(resultadoCombate){
-    let sectionMensaje = document.getElementById('mensaje')
+function crearMensaje(resultado){
+    let sectionMensaje = document.getElementById('resultado')
+    let ataqueDelJugador = document.getElementById('ataqueJugador')
+    let ataqueDelEnemigo = document.getElementById('ataqueEnemigo')
 
-    let txtParrafo = document.createElement('P')
-    txtParrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultadoCombate
+    let nuevoAtaqueJugador = document.createElement('P')
+    let nuevoAtaqueEnemigo = document.createElement('P')
 
-    sectionMensaje.appendChild(txtParrafo)
+    sectionMensaje.innerHTML = resultado
+    nuevoAtaqueJugador.innerHTML = ataqueJugador
+    nuevoAtaqueEnemigo.innerHTML= ataqueEnemigo
+
+    ataqueDelJugador.appendChild(nuevoAtaqueJugador)
+    ataqueDelEnemigo.appendChild(nuevoAtaqueEnemigo)
 }
 
 function crearMensajeFinal(resultadoCombateFinal){
-    let sectionMensaje = document.getElementById('mensaje')
+    let sectionMensaje = document.getElementById('resultado')
 
-    let txtParrafo = document.createElement('P')
-    txtParrafo.innerHTML = resultadoCombateFinal
-
-    sectionMensaje.appendChild(txtParrafo)
+    sectionMensaje.innerHTML = resultadoCombateFinal
 
     //Desactivar botones
     let ataqueAgua = document.getElementById('boton-agua')
