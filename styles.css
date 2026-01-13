@@ -56,3 +56,16 @@ input{
     border-radius: 10px;
     font-family: "Oswald", sans-serif;
 }
+
+#section-attack{
+    flex-direction: column;
+    text-align: center;
+}
+
+.boton-ataque{
+    background-color: #EFE1B5;
+    height: 38px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 20px;
+}

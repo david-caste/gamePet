@@ -22,17 +22,17 @@ botonMascota.addEventListener('click', ()=>{
     if(inputHipodoge.checked){
         alert("Mascota hipodoge")
         spanMascotaJugador.innerHTML = 'Hipodoge'
-        sectionAtaque.style.display = 'block'
+        sectionAtaque.style.display = 'flex'
         sectionMascota.style.display = 'none'
     }else if(inputCapipepo.checked){
         alert("Mascota capipepo")
         spanMascotaJugador.innerHTML = 'Capipepo'
-        sectionAtaque.style.display = 'block'
+        sectionAtaque.style.display = 'flex'
         sectionMascota.style.display = 'none'
     }else if(inputRatigueya.checked){
         alert("Mascota ratigueya")
         spanMascotaJugador.innerHTML = 'Ratigueya'
-        sectionAtaque.style.display = 'block'
+        sectionAtaque.style.display = 'flex'
         sectionMascota.style.display = 'none'
     }else{
         alert("Selecciona una mascota")
