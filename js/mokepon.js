@@ -64,7 +64,10 @@ ataqueTierra.addEventListener('click', ()=>{
 //Boton reiniciar
 let btnReiniciar = document.getElementById('boton-reiniciar')
     btnReiniciar.addEventListener('click', ()=>{
-    location.reload()
+        location.reload()
+        document.getElementById('hipodoge').checked = false;
+        document.getElementById('ratigueya').checked = false;
+        document.getElementById('capipepo').checked = false;
 })
 
 function seleccionarMascotaEnemigo(){

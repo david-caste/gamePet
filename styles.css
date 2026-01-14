@@ -90,6 +90,11 @@ input{
     font-size: 15px;
 }
 
+/*Pseudo clases*/
+input:checked + label{
+    background-color: aquamarine;
+}
+
 /*Recomendación: CSS tricks - https://css-tricks.com/css-grid-layout-guide/ , Game: https://cssgridgarden.com/#es - https://flexboxfroggy.com/#es*/
 .ataque{
     display: grid;
@@ -106,8 +111,17 @@ input{
     border: solid 2px;
 }
 
-@media(max-width: 600px){
+@media(max-width: 370px){
     .tarjetas, .tarjetas-ataques{
+        display: flex;
         flex-direction: column;
+    }
+
+    .boton-ataque{
+        margin: 10px;
+    }
+
+    #boton-tierra{
+        margin-top: 0px;
     }
 }
