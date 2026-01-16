@@ -22,6 +22,20 @@ let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 
+//clases
+class mokepon{
+    constructor(nombre, foto, vida){
+        this.nombre = nombre;
+        this.foto = foto;
+        this.vida = vida;
+    }
+}
+
+//creación Mokepones
+let hipodoge = new mokepon('Hipodoge', './asset/img-loading.webp', 5)
+let capipepo = new mokepon('Capipepo', './asset/img-loading.webp', 5)
+let ratigueya = new mokepon('Ratigueya', './asset/img-loading.webp', 5)
+
 sectionAtaque.style.display = 'none'
 
 sectionBtnReinicio.style.display = 'none'
