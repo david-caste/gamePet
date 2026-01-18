@@ -17,6 +17,7 @@ const sectionMensaje = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataqueJugador')
 const ataqueDelEnemigo = document.getElementById('ataqueEnemigo')
 
+let mokepones = []
 let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3
@@ -35,6 +36,8 @@ class mokepon{
 let hipodoge = new mokepon('Hipodoge', './asset/img-loading.webp', 5)
 let capipepo = new mokepon('Capipepo', './asset/img-loading.webp', 5)
 let ratigueya = new mokepon('Ratigueya', './asset/img-loading.webp', 5)
+
+mokepones.push(hipodoge, capipepo, ratigueya)
 
 sectionAtaque.style.display = 'none'
 
