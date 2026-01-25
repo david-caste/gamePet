@@ -5,9 +5,6 @@ const botonMascota = document.getElementById('boton-mascota')
 const ataqueAgua = document.getElementById('boton-agua')
 const ataqueFuego = document.getElementById('boton-fuego')
 const ataqueTierra = document.getElementById('boton-tierra')
-const inputHipodoge = document.getElementById('hipodoge')
-const inputCapipepo = document.getElementById('capipepo')
-const inputRatigueya = document.getElementById('ratigueya')
 const spanMascotaJugador = document.getElementById('mascota-jugador')
 const btnReiniciar = document.getElementById('boton-reiniciar')
 const inputMascotaEnemigo = document.getElementById('mascota-enemigo')
@@ -21,6 +18,9 @@ const contenedorTarjetas = document.getElementById('contenedorTarjetas')
 let mokepones = []
 let ataqueJugador
 let ataqueEnemigo
+let inputHipodoge
+let inputCapipepo
+let inputRatigueya
 let opcionMokepones
 let vidasJugador = 3
 let vidasEnemigo = 3
@@ -40,9 +40,9 @@ class mokepon{
 }
 
 //creación Mokepones
-let hipodoge = new mokepon('Hipodoge', './asset/img-loading.webp', 5)
-let capipepo = new mokepon('Capipepo', './asset/img-loading.webp', 5)
-let ratigueya = new mokepon('Ratigueya', './asset/img-loading.webp', 5)
+let hipodoge = new mokepon('hipodoge', './asset/img-loading.webp', 5)
+let capipepo = new mokepon('capipepo', './asset/img-loading.webp', 5)
+let ratigueya = new mokepon('ratigueya', './asset/img-loading.webp', 5)
 
 
 hipodoge.ataques.push(
@@ -80,6 +80,11 @@ mokepones.forEach((mokepon) =>{
     </label>
     `
     contenedorTarjetas. innerHTML += opcionMokepones
+
+    inputHipodoge = document.getElementById('hipodoge');
+    inputCapipepo = document.getElementById('capipepo');
+    inputRatigueya = document.getElementById('ratigueya');
+    
 })
 
 botonMascota.addEventListener('click', ()=>{
