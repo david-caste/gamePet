@@ -2,9 +2,6 @@ const sectionAtaque = document.getElementById('section-attack')
 const sectionMascota = document.getElementById('section-pet')
 const sectionBtnReinicio = document.getElementById('final')
 const botonMascota = document.getElementById('boton-mascota')
-const ataqueAgua = document.getElementById('boton-agua')
-const ataqueFuego = document.getElementById('boton-fuego')
-const ataqueTierra = document.getElementById('boton-tierra')
 const spanMascotaJugador = document.getElementById('mascota-jugador')
 const btnReiniciar = document.getElementById('boton-reiniciar')
 const inputMascotaEnemigo = document.getElementById('mascota-enemigo')
@@ -24,6 +21,9 @@ let inputCapipepo
 let inputRatigueya
 let mascotaJugador
 let ataquesMokepon
+let ataqueFuego
+let ataqueTierra
+let ataqueAgua
 let opcionMokepones
 let vidasJugador = 3
 let vidasEnemigo = 3
@@ -137,6 +137,7 @@ function mostrarAtaques(ataques){
         ataquesMokepon = `
         <button id=${ataque.id} class="boton-ataque">${ataque.nombre}</button>
         `
+        contenedorAtaques.innerHTML += ataquesMokepon;
     })
 }
 
