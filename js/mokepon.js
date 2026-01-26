@@ -139,6 +139,9 @@ function mostrarAtaques(ataques){
         `
         contenedorAtaques.innerHTML += ataquesMokepon;
     })
+    ataqueAgua = document.getElementById('boton-agua')
+    ataqueFuego = document.getElementById('boton-fuego')
+    ataqueTierra = document.getElementById('boton-tierra')
 }
 
 //Ataques (botones)
