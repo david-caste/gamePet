@@ -24,6 +24,8 @@ let ataquesMokepon
 let ataqueFuego
 let ataqueTierra
 let ataqueAgua
+let botones = []
+let ataquePorJugador = []
 let opcionMokepones
 let vidasJugador = 3
 let vidasEnemigo = 3
@@ -119,6 +121,7 @@ botonMascota.addEventListener('click', ()=>{
 
     //Mascota enemigo
     seleccionarMascotaEnemigo()
+    secuenciaAtaque()
 })
 
 function extraerAtaques(mascotaJugador){
@@ -135,30 +138,36 @@ function extraerAtaques(mascotaJugador){
 function mostrarAtaques(ataques){
     ataques.forEach((ataque)=>{
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-ataque">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-ataque BAtaque">${ataque.nombre}</button>
         `
         contenedorAtaques.innerHTML += ataquesMokepon;
     })
     ataqueAgua = document.getElementById('boton-agua')
     ataqueFuego = document.getElementById('boton-fuego')
     ataqueTierra = document.getElementById('boton-tierra')
+    botones = document.querySelectorAll('.BAtaque')
 }
 
-//Ataques (botones)
-ataqueAgua.addEventListener('click', ()=>{
-    ataqueJugador = 'AGUA'
-    seleccionarAtaqueEnemigo()
-})
-
-ataqueFuego.addEventListener('click', ()=>{
-    ataqueJugador = 'FUEGO'
-    seleccionarAtaqueEnemigo()
-})
-
-ataqueTierra.addEventListener('click', ()=>{
-    ataqueJugador = 'TIERRA'
-    seleccionarAtaqueEnemigo()
-})
+//Ataques
+function secuenciaAtaque(){
+    botones.forEach((boton)=>{
+        boton.addEventListener('click', (e) => {
+            if (e.target.textContent === '🔥') {
+                ataquePorJugador.push('FUEGO')
+                console.log(ataquePorJugador)
+                boton.style.background = '#112f58';
+            }else if(e.target.textContent === '💧'){
+                ataquePorJugador.push('AGUA')
+                console.log(ataquePorJugador)
+                boton.style.background = '#112f58';
+            }else if(e.target.textContent === '🗻'){
+                ataquePorJugador.push('TIERRA')
+                console.log(ataquePorJugador)
+                boton.style.background = '#112f58';
+            }
+        })
+    })
+}
 
 //Boton reiniciar
     btnReiniciar.addEventListener('click', ()=>{
