@@ -164,7 +164,7 @@ function secuenciaAtaque(){
                 ataquePorJugador.push('TIERRA')
                 console.log(ataquePorJugador)
                 boton.style.background = '#112f58';
-            }
+            } 
         })
     })
 }
