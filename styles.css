@@ -111,6 +111,16 @@ input:checked + label{
     border: solid 2px;
 }
 
+#ver-mapa{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapa{
+    border: 2px solid #fff;
+}
+
 @media(max-width: 370px){
     .tarjetas, .tarjetas-ataques{
         display: flex;
