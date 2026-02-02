@@ -40,6 +40,7 @@ let vidasJugador = 3
 let vidasEnemigo = 3
 //Canvas
 let lienzo = mapa.getContext("2d"); // Vamos a trabajar en 2d
+let intervalo
 
 sectionAtaque.style.display = 'none'
 
@@ -58,6 +59,8 @@ class mokepon{
         this.alto = 80;
         this.mapaFoto = new Image();
         this.mapaFoto.src = foto;
+        this.velocidadx = 0;
+        this.velocidady = 0;
     }
 }
 
@@ -120,6 +123,7 @@ botonMascota.addEventListener('click', ()=>{
         sectionVerMapa.style.display = 'flex'
         //sectionAtaque.style.display = 'flex'
         sectionMascota.style.display = 'none'
+        intervalo = setInterval(pintarPersonaje, 50)
     }else if(inputCapipepo.checked){
         alert("Mascota capipepo")
         spanMascotaJugador.innerHTML = inputCapipepo.id;
@@ -127,6 +131,7 @@ botonMascota.addEventListener('click', ()=>{
         sectionVerMapa.style.display = 'flex'
         //sectionAtaque.style.display = 'flex'
         sectionMascota.style.display = 'none'
+        intervalo = setInterval(pintarPersonaje, 50)
     }else if(inputRatigueya.checked){
         alert("Mascota ratigueya")
         spanMascotaJugador.innerHTML = inputRatigueya.id;
@@ -134,6 +139,7 @@ botonMascota.addEventListener('click', ()=>{
         sectionVerMapa.style.display = 'flex'
         //sectionAtaque.style.display = 'flex'
         sectionMascota.style.display = 'none'
+        intervalo = setInterval(pintarPersonaje, 50)
     }else{
         alert("Selecciona una mascota")
     }
@@ -307,6 +313,8 @@ function crearMensajeFinal(resultadoCombateFinal){
 
 //Canvas
 function pintarPersonaje(){
+    capipepo.x = capipepo.x + capipepo.velocidadx;
+    capipepo.y = capipepo.y + capipepo.velocidady;
     lienzo.clearRect(0, 0, mapa.width, mapa.height)
     lienzo.drawImage(
         capipepo.mapaFoto,
@@ -317,7 +325,23 @@ function pintarPersonaje(){
     )
 }
 
-function moverCapipepo(){
-    capipepo.x = capipepo.x + 5;
-    pintarPersonaje();
+function moverArriba(){
+    capipepo.velocidady = -5;
+}
+
+function moverIzquierda(){
+    capipepo.velocidadx = -5;
+}
+
+function moverAbajo(){
+    capipepo.velocidady = 5;
+}
+
+function moverDerecha(){
+    capipepo.velocidadx = 5;
+}
+
+function detenerMovimiento(){
+    capipepo.velocidadx = 0;
+    capipepo.velocidady = 0;
 }
